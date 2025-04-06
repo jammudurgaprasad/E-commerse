@@ -149,7 +149,7 @@ const AddProduct =()=>{
     
         
         axios
-            .post('http://localhost:3002/upload', { 
+            .post('https://e-commerse-vert-seven.vercel.app/upload', { 
                 category, 
                 subcategory, 
                 subsubcategory, 

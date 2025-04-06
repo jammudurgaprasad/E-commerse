@@ -8,7 +8,7 @@ const ProductsSection = () => {
     const[products,setProducts] = useState([]);
     const navigate = useNavigate();
     useEffect(()=>{
-        axios.get('http://localhost:3002/display')
+        axios.get('https://e-commerse-vert-seven.vercel.app/display')
         .then((response)=>{
             setProducts(response.data)
         })

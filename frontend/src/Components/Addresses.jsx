@@ -20,7 +20,7 @@ const Addresses = () => {
 
     const fetchAddresses = async () => {
         try {
-            const response = await axios.get(`http://localhost:3002/get_address/${userId}`);
+            const response = await axios.get(`https://e-commerse-vert-seven.vercel.app/get_address/${userId}`);
             setAddresses(response.data);
         } catch (error) {
             console.error("Error fetching addresses", error);
@@ -38,7 +38,7 @@ const Addresses = () => {
             return;
         }
         try {
-            await axios.post(`http://localhost:3002/add_address/${userId}`, formData);
+            await axios.post(`https://e-commerse-vert-seven.vercel.app/add_address/${userId}`, formData);
             fetchAddresses(); // Refresh address list
             setFormData({ fullname: '', phonenumber: '', pincode: '', state: '', city: '', houseno: '', area: '' });
         } catch (error) {
@@ -48,7 +48,7 @@ const Addresses = () => {
 
     const handleDelete = async (addressId) => {
         try {
-            await axios.delete(`http://localhost:3002/delete_address/${addressId}`);
+            await axios.delete(`https://e-commerse-vert-seven.vercel.app/delete_address/${addressId}`);
             fetchAddresses(); // Refresh address list
         } catch (error) {
             console.error("Error deleting address", error);

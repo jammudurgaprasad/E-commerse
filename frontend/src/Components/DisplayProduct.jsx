@@ -11,7 +11,7 @@ const DisplayProduct = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3002/display')
+    axios.get('https://e-commerse-vert-seven.vercel.app/display')
       .then((response) => {
         setProducts(response.data);
       })
@@ -27,7 +27,7 @@ const DisplayProduct = () => {
   }
   const handleDelete =(_id)=>{
     console.log(_id);
-    axios.delete(`http://localhost:3002/delete_product/${_id}`);
+    axios.delete(`https://e-commerse-vert-seven.vercel.app/delete_product/${_id}`);
     window.location.reload();
   }
 

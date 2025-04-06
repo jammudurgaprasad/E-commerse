@@ -11,7 +11,7 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         axios
-            .post('http://localhost:3002/login', { email, password })
+            .post('https://e-commerse-vert-seven.vercel.app/login', { email, password })
             .then(result => {
                 console.log(result);
                 localStorage.setItem('isLoggedIn', true);

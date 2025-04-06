@@ -62,7 +62,7 @@ const UpdateProduct = () => {
         };
     
         try {
-            const response = await axios.post('http://localhost:3002/update_product', updatedProduct);
+            const response = await axios.post('https://e-commerse-vert-seven.vercel.app/update_product', updatedProduct);
             console.log('Product updated successfully:', response.data);
             alert('Product updated successfully!');
         } catch (error) {

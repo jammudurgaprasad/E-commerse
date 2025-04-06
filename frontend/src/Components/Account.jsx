@@ -30,7 +30,7 @@ const Account = () => {
 
   const fetchAddresses = async () => {
     try {
-      const response = await axios.get(`http://localhost:3002/get_address/${userId}`);
+      const response = await axios.get(`https://e-commerse-vert-seven.vercel.app/get_address/${userId}`);
       setAddresses(response.data);
     } catch (error) {
       console.error("Error fetching addresses:", error);
@@ -39,7 +39,7 @@ const Account = () => {
 
   const handleCancelOrder = async (orderId) => {
     try {
-      const response = await axios.put(`http://localhost:3002/cancel_order/${orderId}`);
+      const response = await axios.put(`https://e-commerse-vert-seven.vercel.app/cancel_order/${orderId}`);
       if (response.status === 200) {
         setOrders((prevOrders) =>
           prevOrders.map((order) =>
@@ -56,7 +56,7 @@ const Account = () => {
 
   const handleDelete = async (addressId) => {
     try {
-      await axios.delete(`http://localhost:3002/delete_address/${addressId}`);
+      await axios.delete(`https://e-commerse-vert-seven.vercel.app/delete_address/${addressId}`);
       fetchAddresses(); // Refresh address list
     } catch (error) {
       console.error("Error deleting address", error);

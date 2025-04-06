@@ -21,7 +21,7 @@ const Orders = () => {
     // };
     const fetchOrders = async () => {
       try {
-        const response = await axios.get(`http://localhost:3002/orders/${userId}`);
+        const response = await axios.get(`https://e-commerse-vert-seven.vercel.app/orders/${userId}`);
         setOrders(response.data.slice().reverse()); // Reverse without mutating the original data
       } catch (error) {
         console.error("Error fetching orders:", error);
@@ -38,7 +38,7 @@ const Orders = () => {
 
   const handleCancelOrder = async (orderId) => {
     try {
-      const response = await axios.put(`http://localhost:3002/cancel_order/${orderId}`);
+      const response = await axios.put(`https://e-commerse-vert-seven.vercel.app/cancel_order/${orderId}`);
       if (response.status === 200) {
         setOrders((prevOrders) =>
           prevOrders.map((order) =>

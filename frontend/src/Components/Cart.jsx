@@ -16,7 +16,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await axios.get(`http://localhost:3002/cart/${userId}`);
+        const response = await axios.get(`https://e-commerse-vert-seven.vercel.app/cart/${userId}`);
         setCartItems(response.data);
         setLoading(false);
       } catch (error) {
@@ -27,7 +27,7 @@ const Cart = () => {
 
     const fetchAddresses = async () => {
       try {
-        const response = await axios.get(`http://localhost:3002/get_address/${userId}`);
+        const response = await axios.get(`https://e-commerse-vert-seven.vercel.app/get_address/${userId}`);
         setAddress(response.data);
       } catch (error) {
         console.error("Error fetching addresses:", error);
@@ -42,7 +42,7 @@ const Cart = () => {
 
   const handleDelete = async (cartItemId) => {
     try {
-      await axios.delete(`http://localhost:3002/cart/${cartItemId}`);
+      await axios.delete(`https://e-commerse-vert-seven.vercel.app/cart/${cartItemId}`);
       setCartItems((prevCartItems) => prevCartItems.filter((item) => item._id !== cartItemId));
     } catch (err) {
       console.error("Error deleting item:", err);
@@ -60,7 +60,7 @@ const paymentHandler = async (totalAmount, currency, userId, e) => {
 
   try {
       // Step 1: Create an order on the backend
-      const response = await fetch("http://localhost:3002/order", {
+      const response = await fetch("https://e-commerse-vert-seven.vercel.app/order", {
           method: "POST",
           body: JSON.stringify({
               amount: totalAmount * 100, // Convert to paise
@@ -91,7 +91,7 @@ const paymentHandler = async (totalAmount, currency, userId, e) => {
               console.log("Razorpay Payment Response:", response);
 
               // Step 3: Validate payment with the backend
-              const validateRes = await fetch("http://localhost:3002/order/validate", {
+              const validateRes = await fetch("https://e-commerse-vert-seven.vercel.app/order/validate", {
                   method: "POST",
                   body: JSON.stringify(response),
                   headers: { "Content-Type": "application/json" },
@@ -147,7 +147,7 @@ const paymentHandler = async (totalAmount, currency, userId, e) => {
     try {
       let allOrdersPlaced = true;
       for (const item of cartItems) {
-        const response = await axios.post("http://localhost:3002/place_order", {
+        const response = await axios.post("https://e-commerse-vert-seven.vercel.app/place_order", {
           userId,
           productId: item.productId,
           quantity: item.quantity,
