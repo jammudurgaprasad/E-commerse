@@ -17,14 +17,16 @@ app.use(express.json());
 // 
 
 app.use(cors({
-    origin: "https://e-commerse-frontend-bice.vercel.app", // Replace <your-origin-here> with your allowed origin(s)
-    methods: ["POST", "GET"],
+    origin: "https://e-commerse-frontend-bice.vercel.app",
+    methods: ["POST", "GET", "OPTIONS"],
     credentials: true
-  }));
+}));
+
+
 
 
 // mongoose.connect('mongodb://localhost:27017/ECommerce');
-mongoose.connect('mongodb+srv://jammudurgaprasad:jammudurgaprasad@cluster0.gl93u.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(process.env.MONGODB_URI);
 app.use(routes)
 
 
