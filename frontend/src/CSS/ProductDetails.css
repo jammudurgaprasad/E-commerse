@@ -1,0 +1,239 @@
+/* General Styling */
+.product-details-container {
+    display: flex;
+    flex-direction: row; /* Default: Side by side */
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: flex-start;
+}
+
+/* Image Section */
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.selected {
+    border: 1px solid #706b6b;
+}
+
+/* Details Section */
+.details-section {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    align-items: flex-start; /* Ensures left alignment */
+}
+
+.product-title {
+    font-size: 24px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.brand-name, .category {
+    font-size: 18px;
+    color: #5a5a5a;
+}
+
+/* Price & Discount */
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #5500ff;
+}
+
+.original-price {
+    font-size: 18px;
+    color: #b388eb;
+}
+
+.discount {
+    font-size: 18px;
+    color: red;
+}
+
+/* Size Selection */
+.size-selection h4 {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.size-options {
+    display: flex;
+    gap: 10px;
+}
+
+.size-btn {
+    padding: 10px;
+    border: 2px solid #e6def4;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.size-btn:hover {
+    background-color: #9a52ff;
+}
+
+.selected-size {
+    background-color: #ccb7f5;
+}
+
+/* Buttons */
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.add-to-cart-btn, .go-to-cart-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart-btn {
+    background-color: #72ddf7;
+    color: black;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #9a52ff;
+}
+
+.go-to-cart-btn {
+    background-color: #ffb2e6;
+    color: black;
+}
+
+.go-to-cart-btn:hover {
+    background-color: #e382f9;
+}
+
+/* Description */
+.description {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Loading Text */
+.loading-text {
+    font-size: 18px;
+    text-align: center;
+    color: #9a52ff;
+}
+
+/* ---- Responsive Design for Mobile ---- */
+@media (max-width: 768px) {
+    .product-details-container {
+        flex-direction: column; /* Stack images on top, details below */
+        align-items: center;
+        padding: 10px;
+    }
+
+    /* Image now takes full width */
+    .image-section {
+        width: 100%;
+        align-items: center;
+    }
+
+    .main-image {
+        max-width: 100%;
+    }
+
+    .thumbnail-container {
+        justify-content: center;
+    }
+
+    /* Details now take full width below */
+    .details-section {
+        width: 100%;
+        text-align: left;
+        align-items: flex-start; /* Left-align content */
+    }
+
+    .product-title {
+        font-size: 20px;
+    }
+
+    .brand-name, .category {
+        font-size: 16px;
+    }
+
+    /* Price & Discount */
+    .price {
+        font-size: 18px;
+    }
+
+    .original-price {
+        font-size: 16px;
+    }
+
+    .discount {
+        font-size: 16px;
+    }
+
+    /* Size Selection */
+    .size-selection h4 {
+        font-size: 16px;
+    }
+
+    .size-options {
+        justify-content: flex-start; /* Left align sizes */
+    }
+
+    .size-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Buttons */
+    .button-container {
+        flex-direction: column;
+        align-items: flex-start; /* Left align buttons */
+    }
+
+    .add-to-cart-btn, .go-to-cart-btn {
+        width: auto;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}

@@ -1,0 +1,265 @@
+/* General Styles */
+.product-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-list-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Category Section */
+.category-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #444;
+    font-weight: 500;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* Subcategory Section */
+.subcategory-section {
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+.subcategory-title {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #555;
+    font-weight: 500;
+}
+
+.subsubcategory-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Product Card */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Image */
+.product-image {
+    width: 100%;
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Product Text Details */
+.product-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-category,
+.product-brand,
+.product-price,
+.product-sizes,
+.product-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.product-sizes {
+    font-size: 1rem;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+/* Product Actions */
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.update-button,
+.delete-button {
+    flex: 1;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.update-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.update-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+/* No Products Message */
+.no-products-message {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #888;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-list-container {
+        padding: 15px;
+    }
+
+    .product-list-title {
+        font-size: 2rem;
+    }
+
+    .category-section {
+        padding: 15px;
+    }
+
+    .category-title {
+        font-size: 1.8rem;
+    }
+
+    .subcategory-title {
+        font-size: 1.4rem;
+    }
+
+    .subsubcategory-title {
+        font-size: 1.2rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .product-image {
+        height: 180px; /* Adjusted height for smaller screens */
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+    }
+
+    .product-category,
+    .product-brand,
+    .product-price,
+    .product-sizes,
+    .product-description {
+        font-size: 0.85rem;
+    }
+
+    .no-products-message {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-list-title {
+        font-size: 1.8rem;
+    }
+
+    .category-title {
+        font-size: 1.6rem;
+    }
+
+    .subcategory-title {
+        font-size: 1.3rem;
+    }
+
+    .subsubcategory-title {
+        font-size: 1.1rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .product-image {
+        height: 150px; /* Adjusted height for mobile screens */
+    }
+
+    .product-title {
+        font-size: 1rem;
+    }
+
+    .product-category,
+    .product-brand,
+    .product-price,
+    .product-sizes,
+    .product-description {
+        font-size: 0.8rem;
+    }
+
+    .no-products-message {
+        font-size: 1rem;
+    }
+}
+
+.product-description{
+    display: none;
+}

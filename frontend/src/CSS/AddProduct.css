@@ -1,0 +1,145 @@
+/* General Styles */
+.add-product-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.add-product-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Category, Subcategory, and Weartype Sections */
+.category-list,
+.subcategory-section,
+.subsubcategory-section,
+.weartype-section,
+.sizes-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-item,
+.subcategory-item,
+.subsubcategory-item,
+.weartype-item,
+.size-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-item:hover,
+.subcategory-item:hover,
+.subsubcategory-item:hover,
+.weartype-item:hover,
+.size-item:hover {
+    background-color: #f0f0f0;
+}
+
+.category-radio,
+.subcategory-radio,
+.subsubcategory-radio,
+.weartype-radio,
+.size-checkbox {
+    cursor: pointer;
+}
+
+/* Product Details Section */
+.product-details-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-label {
+    font-weight: bold;
+}
+
+.detail-input,
+.detail-textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.detail-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.image-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Submit Button */
+.submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-product-container {
+        padding: 10px;
+    }
+
+    .add-product-title {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .category-item,
+    .subcategory-item,
+    .subsubcategory-item,
+    .weartype-item,
+    .size-item {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .detail-input,
+    .detail-textarea {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .submit-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
