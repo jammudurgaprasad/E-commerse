@@ -16,7 +16,7 @@ app.use(express.json());
 // 
 
 app.use(cors({
-    origin: [""], // Replace <your-origin-here> with your allowed origin(s)
+    origin: ["https://e-commerse-frontend-bice.vercel.app/login"], // Replace <your-origin-here> with your allowed origin(s)
     methods: ["POST", "GET"],
     credentials: true
   }));
