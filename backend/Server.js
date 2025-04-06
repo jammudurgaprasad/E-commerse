@@ -5,7 +5,7 @@ require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const UserModel = require('./models/Users');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const routes = require('./routes/EComroute');
 const jwt = require("jsonwebtoken");
 const Razorpay = require('razorpay');
