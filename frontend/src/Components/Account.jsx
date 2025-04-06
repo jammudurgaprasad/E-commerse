@@ -16,9 +16,11 @@ const Account = () => {
     }
   }, [userId]);
 
+// const abcd = 'http://localhost:3002';
+
   const fetchOrders = async () => {
     try {
-      const response = await axios.get(`http://localhost:3002/orders/${userId}`);
+      const response = await axios.get(`https://e-commerse-vert-seven.vercel.app/orders/${userId}`);
       setOrders(response.data.slice().reverse()); // Ensure a new array is created before reversing
     } catch (error) {
       console.error("Error fetching orders:", error);
