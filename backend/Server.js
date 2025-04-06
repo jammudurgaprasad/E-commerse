@@ -1,7 +1,8 @@
+const cors = require("cors");
+
 require('dotenv').config();
 
 const express = require("express");
-const cors = require("cors");
 const mongoose = require("mongoose");
 const UserModel = require('./models/Users');
 const bcrypt = require('bcrypt');
