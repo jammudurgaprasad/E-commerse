@@ -15,7 +15,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await axios.get(`https://e-commerse-vert-seven.vercel.app/productdetails/${_id}`);
+        const response = await axios.get(`http://localhost:3002/productdetails/${_id}`);
         setProduct(response.data);
         setSelectedImage(response.data.images[0]); // Set default image
       } catch (error) {
@@ -41,7 +41,7 @@ const ProductDetails = () => {
         return;
       }
       else{
-        const response = await axios.post("https://e-commerse-vert-seven.vercel.app/add_to_cart", {
+        const response = await axios.post("http://localhost:3002/add_to_cart", {
           userId,
           productId: _id,
           selectedSize,

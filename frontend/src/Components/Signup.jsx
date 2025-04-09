@@ -74,7 +74,7 @@ const Signup = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-            .post('https://e-commerse-vert-seven.vercel.app/', { name, email, password })
+            .post('http://localhost:3002/', { name, email, password })
             .then(result => {
                 console.log(result);
                 navigate('/login');

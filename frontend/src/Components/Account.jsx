@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../CSS/Account.css";
 import Navigation from "./Navigation";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Account = () => {
   const [activeTab, setActiveTab] = useState("orders"); // Default tab
@@ -20,7 +23,7 @@ const Account = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await axios.get(`https://e-commerse-vert-seven.vercel.app/orders/${userId}`);
+      const response = await axios.get(`http://localhost:3002/orders/${userId}`);
       setOrders(response.data.slice().reverse()); // Ensure a new array is created before reversing
     } catch (error) {
       console.error("Error fetching orders:", error);
@@ -30,7 +33,7 @@ const Account = () => {
 
   const fetchAddresses = async () => {
     try {
-      const response = await axios.get(`https://e-commerse-vert-seven.vercel.app/get_address/${userId}`);
+      const response = await axios.get(`http://localhost:3002/get_address/${userId}`);
       setAddresses(response.data);
     } catch (error) {
       console.error("Error fetching addresses:", error);
@@ -39,7 +42,7 @@ const Account = () => {
 
   const handleCancelOrder = async (orderId) => {
     try {
-      const response = await axios.put(`https://e-commerse-vert-seven.vercel.app/cancel_order/${orderId}`);
+      const response = await axios.put(`http://localhost:3002/cancel_order/${orderId}`);
       if (response.status === 200) {
         setOrders((prevOrders) =>
           prevOrders.map((order) =>
@@ -56,12 +59,14 @@ const Account = () => {
 
   const handleDelete = async (addressId) => {
     try {
-      await axios.delete(`https://e-commerse-vert-seven.vercel.app/delete_address/${addressId}`);
+      await axios.delete(`http://localhost:3002/delete_address/${addressId}`);
       fetchAddresses(); // Refresh address list
     } catch (error) {
       console.error("Error deleting address", error);
     }
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="account-container">
@@ -111,7 +116,7 @@ const Account = () => {
         {activeTab === "addresses" && (
   <div className="addresses">
     <h2>Your Addresses</h2>
-    <button className="add-address-btn" onClick={() => alert("Add Address Clicked")}>
+    <button className="add-address-btn" onClick={() => navigate("/address")}>
       Add Address
     </button>
     {addresses.length === 0 ? (

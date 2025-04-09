@@ -1,0 +1,110 @@
+/* Root container */
+.addresses-page {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Headings */
+  .addresses-title,
+  .saved-addresses-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styles */
+  .addresses-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .addresses-form input {
+    flex: 1 1 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  .add-address-btn {
+    flex: 1 1 100%;
+    padding: 12px;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-address-btn:hover {
+    background-color: #357abd;
+  }
+  
+  /* Address list */
+  .addresses-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .address-item {
+    background-color: #f8f8f8;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #4a90e2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .address-item > div {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  /* Delete button */
+  .delete-address-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    align-self: flex-start;
+  }
+  
+  .delete-address-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .addresses-form input {
+      flex: 1 1 100%;
+    }
+  
+    .address-item {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .delete-address-btn {
+      align-self: flex-end;
+    }
+  }
+  
